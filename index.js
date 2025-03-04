@@ -43,6 +43,7 @@ for (let i = 1; i <= row; i++) {
 let selectedCell="";
 let allData ={};
 
+// add Eventlistener on body so through event deligation event apply on cells also
 body.addEventListener("click",(e)=>{
     selectedCell=e.target;
     activeCellElement.textContent=e.target.id;
@@ -50,7 +51,7 @@ body.addEventListener("click",(e)=>{
     applyCellInfoToForm();
 });
 
-
+// Add Eventlistener on form
 form.addEventListener("change",()=>{
     if(!selectedCell.id){
         alert('please select a cell before applying style');
@@ -73,6 +74,7 @@ form.addEventListener("change",()=>{
     applyStyleToSelectedCells(Data);
 });
 
+// apply styling on selected cell
 function applyStyleToSelectedCells(Data){
     selectedCell.style.fontSize=Data.fontSize;
     selectedCell.style.fontFamily=Data.fontFamily;
